@@ -28,6 +28,7 @@ const run = async () => {
         workflow_id: workflowName,
     });
 
+    console.log("workflow.data.id", workflow.data.id);
     const runs = await client.actions.listWorkflowRuns({
         owner,
         repo,
