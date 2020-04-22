@@ -6,6 +6,7 @@ const { context } = require('@actions/github');
 const { Octokit } = require('@octokit/rest');
 
 const run = async () => {
+    console.log("context", context);
     const { GITHUB_TOKEN } = process.env;
     const workflows = core.getInput('workflows');
     if (!workflows) {
