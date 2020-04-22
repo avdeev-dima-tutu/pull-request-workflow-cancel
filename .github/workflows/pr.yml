@@ -12,5 +12,8 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v2
       - run: echo 'Running now'
-      - run: sleep 30
+      - run: sleep 10
+      - run: sleep 10
+      - run: sleep 10
+      - run: sleep 10
       - run: echo 'wasnt cancelled'
