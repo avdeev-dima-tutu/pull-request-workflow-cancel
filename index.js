@@ -8,7 +8,12 @@ const { Octokit } = require('@octokit/rest');
 const run = async () => {
     console.log("context", context);
     const { GITHUB_TOKEN } = process.env;
-    const workflowName = context.workflow
+    const workflowFileName = core.getInput('workflow');
+    if (!workflowFileName) {
+        core.setFailed('No `workflows` input given, aborting.');
+        return;
+    }
+    const workflowName = workflowFileName; //todo context.workflow
     if (!GITHUB_TOKEN) {
         core.setFailed('GITHUB_TOKEN env variable is required...');
         return;
